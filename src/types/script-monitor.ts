@@ -1,8 +1,8 @@
 export interface ScriptMonitorRow {
-    id: string;
-    scriptStatus: boolean;
-    ec2Name: string;
-    isRunning: boolean;
+  id: string;
+  scriptStatus: boolean;
+  ec2Name: string;
+  isRunning: boolean;
 }
 
 export interface EC2Instance {
@@ -10,6 +10,7 @@ export interface EC2Instance {
   type?: string;
   state?: string;
   publicDns?: string;
+  os?: string;
 }
 
 export interface ScriptTableRow {

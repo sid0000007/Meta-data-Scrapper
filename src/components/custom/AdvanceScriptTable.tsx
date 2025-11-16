@@ -184,6 +184,7 @@ export function AdvanceScriptTable() {
                 <TableRow>
                   <TableHead className="min-w-[200px]">Instance ID</TableHead>
                   <TableHead className="min-w-[120px]">Type</TableHead>
+                  <TableHead className="min-w-[120px]">OS</TableHead>
                   <TableHead className="min-w-[120px]">State</TableHead>
                   <TableHead className="min-w-[120px] text-right">
                     Actions
@@ -195,6 +196,7 @@ export function AdvanceScriptTable() {
                   <TableRow key={instance.id}>
                     <TableCell>{instance.id}</TableCell>
                     <TableCell>{instance.type}</TableCell>
+                    <TableCell>{instance.os ?? "N/A"}</TableCell>
                     <TableCell>
                       <Badge variant={getStateBadgeVariant(instance.state!)}>
                         {instance.state}
@@ -216,7 +218,8 @@ export function AdvanceScriptTable() {
                         }
                         disabled={
                           actionInProgress === instance.id ||
-                          instance.state === "pending" || instance.state === "stopping"
+                          instance.state === "pending" ||
+                          instance.state === "stopping"
                         }
                       >
                         {actionInProgress === instance.id ? (
